@@ -54,14 +54,54 @@
 		41EF67E02919DB4B00C0DE64 /* bodyProper */ = {
 			isa = PBXGroup;
 			children = (
-				41EF67E12919DB4B00C0DE64 /* AppDelegate.swift */,
-				41EF67E32919DB4B00C0DE64 /* SceneDelegate.swift */,
-				41EF67E52919DB4B00C0DE64 /* ViewController.swift */,
-				41EF67EA2919DB6600C0DE64 /* Assets.xcassets */,
-				41EF67EC2919DB6600C0DE64 /* LaunchScreen.storyboard */,
-				41EF67EF2919DB6600C0DE64 /* Info.plist */,
+				41EF67F82919E04F00C0DE64 /* Application */,
+				41EF67FA2919E0FF00C0DE64 /* Module */,
+				41EF67F92919E08300C0DE64 /* Resourse */,
 			);
 			path = bodyProper;
+			sourceTree = "<group>";
+		};
+		41EF67F82919E04F00C0DE64 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				41EF67E32919DB4B00C0DE64 /* SceneDelegate.swift */,
+				41EF67E12919DB4B00C0DE64 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		41EF67F92919E08300C0DE64 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				41EF67EC2919DB6600C0DE64 /* LaunchScreen.storyboard */,
+				41EF67EF2919DB6600C0DE64 /* Info.plist */,
+				41EF67EA2919DB6600C0DE64 /* Assets.xcassets */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		41EF67FA2919E0FF00C0DE64 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				41EF67FC2919E15B00C0DE64 /* Views */,
+				41EF67FD2919E17600C0DE64 /* Controllers */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		41EF67FC2919E15B00C0DE64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		41EF67FD2919E17600C0DE64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41EF67E52919DB4B00C0DE64 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +316,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48AKWV4768;
-				INFOPLIST_FILE = bodyProper/Info.plist;
+				INFOPLIST_FILE = bodyProper/Resourse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -296,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48AKWV4768;
-				INFOPLIST_FILE = bodyProper/Info.plist;
+				INFOPLIST_FILE = bodyProper/Resourse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
