@@ -9,22 +9,22 @@ import UIKit
 
 class WeatherView: UIView {
     
-    let sunImage = UIImage(named: "sun")
+   
     
     private var sunImageView: UIImageView {
         let imageView = UIImageView()
-        
+        imageView.image = UIImage(named: "sun")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.image = sunImage
+       
+       
         return imageView
     }
     
     private var weatherLabel: UILabel {
         let label = UILabel()
         label.text = "Солнечно"
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }
     
@@ -32,9 +32,8 @@ class WeatherView: UIView {
         let label = UILabel()
         label.text = "Хорошая погода чтобы позаниматься"
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
         
     }
@@ -56,6 +55,8 @@ class WeatherView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(sunImageView)// добавляю солнце на экран weatherView
+        addSubview(weatherLabel)
+        addSubview(weatherTextLabel)
         
     }
     
@@ -64,10 +65,20 @@ extension WeatherView {
     
     private func setConstraint() {
         NSLayoutConstraint.activate([
-            sunImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            sunImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             sunImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            sunImageView.heightAnchor.constraint(equalToConstant: 40),
-            sunImageView.widthAnchor.constraint(equalToConstant: 40)
+            sunImageView.heightAnchor.constraint(equalToConstant: 60),
+            sunImageView.widthAnchor.constraint(equalToConstant: 60),
+            
+            //констрейнты для label
+            weatherLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            weatherLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: -10),
+            weatherLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            weatherTextLabel.topAnchor.constraint(equalTo: weatherLabel.bottomAnchor, constant: 0),
+            weatherTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherTextLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: -5)
             
         ])
         
