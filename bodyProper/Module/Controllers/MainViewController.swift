@@ -59,6 +59,7 @@ class MainViewController: UIViewController {
     
     // Создаю эксземпляр класс 
     private let calendarView = CalendarView()
+    private let weatherView = WeatherView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,12 +69,13 @@ class MainViewController: UIViewController {
         
     }
     
-    private func setupViews(){ //настройки wiew
+    private func setupViews(){ //настройки view
         view.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9294117647, blue: 0.8862745098, alpha: 1) // создаю цвет основной родительной wiew
         view.addSubview(calendarView)// размещаю на экран calendar (вначале календарь, потом иконку)
         view.addSubview(userFotoImageView)// размещаю иконку пользователя на основной экран (wiew)
         view.addSubview(userNameLabel)//размещаю на экран имя пользователя
         view.addSubview(addWorkoutButton)// размещаю кнопку на основной view
+        view.addSubview(weatherView)// размещаю на экран weatherView
         
     }
     // создаю метод нажатия на кнопку
@@ -109,7 +111,13 @@ extension MainViewController { // расширяю класс методами
             addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
             addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             addWorkoutButton.widthAnchor.constraint(equalToConstant: 80),
-            addWorkoutButton.heightAnchor.constraint(equalToConstant: 80)
+            addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
+            
+            //устанавливаю констрэйнты для окна погоды
+            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+            weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
+            weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            weatherView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
 }

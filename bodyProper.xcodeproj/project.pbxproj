@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		418894B6291AF395001536A3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418894B5291AF395001536A3 /* CalendarView.swift */; };
+		418894B9291B3174001536A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418894B8291B3174001536A3 /* WeatherView.swift */; };
 		41EF67E22919DB4B00C0DE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF67E12919DB4B00C0DE64 /* AppDelegate.swift */; };
 		41EF67E42919DB4B00C0DE64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF67E32919DB4B00C0DE64 /* SceneDelegate.swift */; };
 		41EF67E62919DB4B00C0DE64 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF67E52919DB4B00C0DE64 /* MainViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		418894B5291AF395001536A3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		418894B8291B3174001536A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		41EF67DE2919DB4B00C0DE64 /* bodyProper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bodyProper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41EF67E12919DB4B00C0DE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41EF67E32919DB4B00C0DE64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				41EF67E52919DB4B00C0DE64 /* MainViewController.swift */,
 				418894B5291AF395001536A3 /* CalendarView.swift */,
+				418894B8291B3174001536A3 /* WeatherView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				418894B9291B3174001536A3 /* WeatherView.swift in Sources */,
 				41EF67E62919DB4B00C0DE64 /* MainViewController.swift in Sources */,
 				41EF67E22919DB4B00C0DE64 /* AppDelegate.swift in Sources */,
 				418894B6291AF395001536A3 /* CalendarView.swift in Sources */,
