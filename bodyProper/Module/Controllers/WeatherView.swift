@@ -23,6 +23,8 @@ class WeatherView: UIView {
     private var weatherLabel: UILabel {
         let label = UILabel()
         label.text = "Солнечно"
+        label.textColor = .specialGray
+        label.font = UIFont(name: "Roboto-Medium", size: 18)
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,6 +33,8 @@ class WeatherView: UIView {
     private var weatherTextLabel: UILabel {
         let label = UILabel()
         label.text = "Хорошая погода чтобы позаниматься"
+        label.textColor = .specialGray
+        label.font = UIFont(name: "Roboto-Medium", size: 14)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +56,7 @@ class WeatherView: UIView {
     private func setupView() {
         backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         layer.cornerRadius = 10
+        addShadowOnView()// тень
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(sunImageView)// добавляю солнце на экран weatherView

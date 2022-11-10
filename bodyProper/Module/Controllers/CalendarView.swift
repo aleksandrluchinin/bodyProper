@@ -21,7 +21,7 @@ class CalendarView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     private func setupView() {
-        backgroundColor = #colorLiteral(red: 0.2, green: 0.5529411765, blue: 0.4901960784, alpha: 1)
+        backgroundColor = .specialGreen
         layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
     }
