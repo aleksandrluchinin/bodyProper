@@ -39,7 +39,7 @@ class CalendarView: UIView {
         
         addSubview(collectionView)
         //регистрирую ячейку
-        collectionView.register(UICollectionView.self, forCellWithReuseIdentifier: idCalendarCell)
+        collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
      
     }
     //применение обязательных методов протокола
@@ -59,7 +59,9 @@ extension CalendarView: UICollectionViewDataSource {
     // метод переиспользования ячеек
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // создаю переиспользуемую ячейку  методе
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath) as? UICollectionViewCell else {
+            return UICollectionViewCell()
+        }
         
         return cell
     }
