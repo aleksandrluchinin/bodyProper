@@ -59,7 +59,28 @@ class MainViewController: UIViewController {
         
         return button
     }
-    
+    //создаю label для отбражения тренировок
+    private var workoutTodaylabel: UILabel {
+        let label = UILabel()
+        label.text = "Workout Today"
+        label.textColor = .specialLightBrown
+        label.font = UIFont(name: "Roboto-Medium", size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
+    //создаю таблицу
+    private var tableView: UITableView {
+        let tableView = UITableView()
+        tableView.backgroundColor = .none
+        tableView.separatorStyle = .none //разделение между ячейками
+        tableView.bounces = false //чтобы таблица не оттягивалась
+        tableView.showsVerticalScrollIndicator = false //отключение скроллинга
+        tableView.delaysContentTouches = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+        
+    }
+    private let idTableViewCell = "idTableViewCell" //индентификтор ячейки
     // Создаю эксземпляр класс 
     private let calendarView = CalendarView()
     private let weatherView = WeatherView()
@@ -73,6 +94,7 @@ class MainViewController: UIViewController {
         
         setupViews() //1)вызываю метод при загрузке экрана
         setConstraints() // 2)вызываю метод создания констрэйнтов
+        setDelegates()// метод передачи данных
         
     }
     
@@ -83,14 +105,49 @@ class MainViewController: UIViewController {
         view.addSubview(userNameLabel)//размещаю на экран имя пользователя
         view.addSubview(addWorkoutButton)// размещаю кнопку на основной view
         view.addSubview(weatherView)// размещаю на экран weatherView
+        view.addSubview(workoutTodaylabel)// размещаю лейбл текст
+        view.addSubview(tableView)//размещаю таблицу
+        tableView.register(UITableView.self, forCellReuseIdentifier: idTableViewCell)//регистрирую ячейку
         
     }
+    private func setDelegates() {
+    tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
     // создаю метод нажатия на кнопку
     @objc private func addWorkoutButtonTapped() {
         print("нажатие на кнопку +")
     }
     
 }
+//MARK: - UITableViewDataSource
+
+extension MainViewController: UITableViewDataSource {
+    //количество строк в секции
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        15
+    }
+    //создание ячейки
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+//MARK - UITableViewDelegate
+
+extension MainViewController: UITableViewDelegate {
+    
+    // высота ячейки в поинтах (по умолчанию 40)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+    
+}
+//MARK - Set Constraints
 
 extension MainViewController { // расширяю класс методами
     
@@ -124,7 +181,16 @@ extension MainViewController { // расширяю класс методами
             weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            weatherView.heightAnchor.constraint(equalToConstant: 100)
+            weatherView.heightAnchor.constraint(equalToConstant: 100),
+            
+            workoutTodaylabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            workoutTodaylabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            
+            tableView.topAnchor.constraint(equalTo: workoutTodaylabel.bottomAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            
         ])
     }
 }
