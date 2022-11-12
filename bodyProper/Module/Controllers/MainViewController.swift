@@ -107,7 +107,7 @@ class MainViewController: UIViewController {
         view.addSubview(weatherView)// размещаю на экран weatherView
         view.addSubview(workoutTodaylabel)// размещаю лейбл текст
         view.addSubview(tableView)//размещаю таблицу
-        tableView.register(UITableView.self, forCellReuseIdentifier: idTableViewCell)//регистрирую ячейку
+        tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idTableViewCell)//регистрирую ячейку
         
     }
     private func setDelegates() {
@@ -130,7 +130,9 @@ extension MainViewController: UITableViewDataSource {
     }
     //создание ячейки
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
+            return UITableViewCell()
+        }
         
         return cell
     }
