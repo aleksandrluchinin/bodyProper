@@ -49,7 +49,7 @@ class StatisticViewController: UIViewController {
 
         setupViews()
         setConstraints()
-        
+        setDelegates()
     }
     
     private func setupViews() {
@@ -59,7 +59,10 @@ class StatisticViewController: UIViewController {
         view.addSubview(tableView)
         tableView.register(StatisticsTableViewCell.self, forCellReuseIdentifier: statisticIdTableViewCell)
     }
-   
+    private func setDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -70,7 +73,6 @@ extension StatisticViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: statisticIdTableViewCell, for: indexPath) as? StatisticsTableViewCell else {
             return UITableViewCell()
         }
@@ -78,10 +80,21 @@ extension StatisticViewController: UITableViewDataSource {
         return cell
     }
     
+ 
     
+}
+// MARK: - UITableViewDelegate
+
+extension StatisticViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+    }
+}
 // MARK: - Set Constraint
 
-extension StatisticViewController {
+
+    extension StatisticViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -91,11 +104,8 @@ extension StatisticViewController {
             
             exercisesLabel.topAnchor.constraint(equalTo: statisticslabel.bottomAnchor, constant: 70),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10)
-            
-            
-        
         
         ])
     }
 }
-}
+

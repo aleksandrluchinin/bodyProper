@@ -163,7 +163,7 @@ extension MainViewController { // расширяю класс методами
             userFotoImageView.heightAnchor.constraint(equalToConstant: 100),
             userFotoImageView.widthAnchor.constraint(equalToConstant: 100),
             
-            // устанавливаю констрэйнты для каленрдаря
+            // устанавливаю констрэйнты для календаря
             calendarView.topAnchor.constraint(equalTo: userFotoImageView.centerYAnchor),// верхня граница
             calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
