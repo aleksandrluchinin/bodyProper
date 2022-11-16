@@ -18,6 +18,7 @@
 		41B3CB2D2922E1FF0064DB58 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3CB2C2922E1FF0064DB58 /* StatisticViewController.swift */; };
 		41B3CB302922EF920064DB58 /* StatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3CB2F2922EF920064DB58 /* StatisticsTableViewCell.swift */; };
 		41E42CC729243646006DBCC7 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E42CC629243646006DBCC7 /* UILabel + Extensions.swift */; };
+		41E42CCC2924657E006DBCC7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E42CCB2924657E006DBCC7 /* MainTabBarController.swift */; };
 		41EB52B9291EF98900A0C8D3 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB52B8291EF98900A0C8D3 /* WorkoutTableViewCell.swift */; };
 		41EB52BC291F001C00A0C8D3 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EB52BB291F001C00A0C8D3 /* UIStackView + Extension.swift */; };
 		41EF67E22919DB4B00C0DE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF67E12919DB4B00C0DE64 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		41B3CB2C2922E1FF0064DB58 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		41B3CB2F2922EF920064DB58 /* StatisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewCell.swift; sourceTree = "<group>"; };
 		41E42CC629243646006DBCC7 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		41E42CCB2924657E006DBCC7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		41EB52B8291EF98900A0C8D3 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		41EB52BB291F001C00A0C8D3 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		41EF67DE2919DB4B00C0DE64 /* bodyProper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bodyProper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,14 @@
 			path = StatisticModule;
 			sourceTree = "<group>";
 		};
+		41E42CCA29246508006DBCC7 /* NavigationModule */ = {
+			isa = PBXGroup;
+			children = (
+				41E42CCB2924657E006DBCC7 /* MainTabBarController.swift */,
+			);
+			path = NavigationModule;
+			sourceTree = "<group>";
+		};
 		41EF67D52919DB4B00C0DE64 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				41EF67F82919E04F00C0DE64 /* Application */,
+				41E42CCA29246508006DBCC7 /* NavigationModule */,
 				41EF67FA2919E0FF00C0DE64 /* Module */,
 				41EF67F92919E08300C0DE64 /* Resourse */,
 			);
@@ -256,6 +267,7 @@
 			files = (
 				418894B9291B3174001536A3 /* WeatherView.swift in Sources */,
 				4194026B291C7F34006FEAB8 /* UIFont + Extensions.swift in Sources */,
+				41E42CCC2924657E006DBCC7 /* MainTabBarController.swift in Sources */,
 				41EF67E62919DB4B00C0DE64 /* MainViewController.swift in Sources */,
 				41B3CB2D2922E1FF0064DB58 /* StatisticViewController.swift in Sources */,
 				41EB52B9291EF98900A0C8D3 /* WorkoutTableViewCell.swift in Sources */,
