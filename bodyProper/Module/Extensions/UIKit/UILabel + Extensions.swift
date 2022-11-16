@@ -15,5 +15,16 @@ extension UILabel {
         self.textColor = .specialLightBrown
         self.adjustsFontSizeToFitWidth = true
         self.translatesAutoresizingMaskIntoConstraints = false
+
+    }
+}
+extension UILabel {
+    convenience init(textLabel: String = "") {
+        self.init()
+        self.text = textLabel
+        self.font = UIFont(name: "Roboto-Medium", size: 24)
+        self.textColor = .specialGray
+        self.adjustsFontSizeToFitWidth = true
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
