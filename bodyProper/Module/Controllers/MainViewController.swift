@@ -117,7 +117,10 @@ class MainViewController: UIViewController {
     
     // создаю метод нажатия на кнопку
     @objc private func addWorkoutButtonTapped() {
-        print("нажатие на кнопку +")
+        let newWorkoutViewController = NewWorkoutViewController()
+        newWorkoutViewController.modalPresentationStyle = .fullScreen // открытие контролера на весь экран
+        newWorkoutViewController.modalTransitionStyle = .coverVertical // отображение анимации
+        present(newWorkoutViewController, animated: true)// переход между контролеерами
     }
     
 }
