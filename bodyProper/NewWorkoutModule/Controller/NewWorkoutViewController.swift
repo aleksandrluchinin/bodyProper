@@ -48,8 +48,22 @@ class NewWorkoutViewController: UIViewController {
         let mySwitch = UISwitch()
         mySwitch.isOn = true
         mySwitch.onTintColor = .specialGreen
+        mySwitch.addTarget(self, action: #selector(comutator), for: .valueChanged)
         mySwitch.translatesAutoresizingMaskIntoConstraints = false
         return mySwitch
+    }
+    
+    private var mySlider: UISlider {
+        let slider = UISlider()
+       slider.minimumValue = 0
+        slider.maximumValue = 10
+        slider.maximumTrackTintColor = .specialLightBrown
+        slider.minimumTrackTintColor = .specialGreen
+        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        
+       slider.translatesAutoresizingMaskIntoConstraints = false
+        
+        return slider
     }
     
     private var nameLabel = UILabel(text: "Name")
@@ -72,11 +86,19 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(nameTextField)
         view.addSubview(datePicker)
         view.addSubview(mySwitch)
+        view.addSubview(mySlider)
         
     }
     @objc private func closeButtonTapped() {
         dismiss(animated: true) //закрытие экрана при нажатии на кнопку
     }
+    @objc private func comutator() {
+        print("1")
+    }
+    @objc private func sliderChanged() {
+        print(mySlider.value)
+    }
+    
 }
 
 // MARK: - Set Constraint
@@ -108,7 +130,11 @@ extension NewWorkoutViewController {
             datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
             mySwitch.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
-            mySwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            mySwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            mySlider.topAnchor.constraint(equalTo: mySwitch.bottomAnchor, constant: 20),
+            mySlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mySlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
 }
