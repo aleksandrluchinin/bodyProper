@@ -8,7 +8,6 @@
 import UIKit
 
 class StatisticViewController: UIViewController {
-
     
     private var statisticslabel: UILabel {
         let label = UILabel()
@@ -36,14 +35,14 @@ class StatisticViewController: UIViewController {
         return segmentConrtol
     }
     private var exercisesLabel = UILabel(text: "Exerciser")
-//        let label = UILabel()
-//        label.text = "Exercises"
-//        label.font = UIFont(name: "Roboto-Medium", size: 14)
-//        label.textColor = .specialBrown
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return label
-//    }
+    //        let label = UILabel()
+    //        label.text = "Exercises"
+    //        label.font = UIFont(name: "Roboto-Medium", size: 14)
+    //        label.textColor = .specialBrown
+    //        label.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        return label
+    //    }
     
     private var tableView: UITableView {
         let tableView = UITableView()
@@ -57,17 +56,14 @@ class StatisticViewController: UIViewController {
         return tableView
     }
     private let statisticIdTableViewCell = "statisticIdTableViewCell"
-        
-        
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupViews()
         setConstraints()
         setDelegates()
     }
-    
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(segmentConrtol)
@@ -81,7 +77,7 @@ class StatisticViewController: UIViewController {
         tableView.dataSource = self
     }
     @objc private func segmentdChange() {
-       if segmentConrtol.selectedSegmentIndex == 0  {
+        if segmentConrtol.selectedSegmentIndex == 0  {
             print("Неделя")
         } else {
             print("Месяц")
@@ -104,9 +100,6 @@ extension StatisticViewController: UITableViewDataSource {
         
         return cell
     }
-    
- 
-    
 }
 // MARK: - UITableViewDelegate
 
@@ -118,12 +111,11 @@ extension StatisticViewController: UITableViewDelegate {
 }
 // MARK: - Set Constraint
 
-
-    extension StatisticViewController {
+extension StatisticViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-        
+            
             statisticslabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             statisticslabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
@@ -134,12 +126,12 @@ extension StatisticViewController: UITableViewDelegate {
             exercisesLabel.topAnchor.constraint(equalTo: statisticslabel.bottomAnchor, constant: 70),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             exercisesLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-             
+            
             tableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor,constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-        
+            
         ])
     }
 }

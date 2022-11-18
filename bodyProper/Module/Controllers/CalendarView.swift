@@ -40,7 +40,7 @@ class CalendarView: UIView {
         addSubview(collectionView)
         //регистрирую ячейку
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
-     
+        
     }
     //применение обязательных методов протокола
     private func setDelegate(){
@@ -59,14 +59,11 @@ extension CalendarView: UICollectionViewDataSource {
     // метод переиспользования ячеек
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // создаю переиспользуемую ячейку  методе
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath) as? UICollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCalendarCell, for: indexPath) as? CalendarCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
         return cell
     }
-    
-    
 }
 //MARK: - UICollectionViewDelegate
 //подписываюсь на протокол UICollectionViewDelegate
@@ -90,8 +87,8 @@ extension CalendarView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-    // MARK: - Set Constraints
-    
+// MARK: - Set Constraints
+
 extension CalendarView {
     
     //размещаю колекцию ячеек на view
@@ -101,10 +98,9 @@ extension CalendarView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 105),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
-        
-        
+            
         ])
     }
 }
-    
+
 

@@ -46,7 +46,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         }
     }
     
-        
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -60,10 +59,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         layer.cornerRadius = 10
-        
         addSubview(dayOfWeekLabel)
         addSubview(numberOfdayLabel)
     }
+}
+    // MARK: - Set Constraint
+    extension CalendarCollectionViewCell {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -73,8 +74,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
             numberOfdayLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             numberOfdayLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
             
-        
-        
         ])
     }
 }
+

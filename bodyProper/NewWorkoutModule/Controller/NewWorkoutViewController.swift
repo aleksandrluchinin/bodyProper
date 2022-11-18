@@ -19,6 +19,9 @@ class NewWorkoutViewController: UIViewController {
         botton.translatesAutoresizingMaskIntoConstraints = false
         return botton
     }
+    private var nameLabel = UILabel(text: "Name")
+    private var repsLabel = UILabel(text: "Reps or timer")
+    
     private var nameTextField: UITextField {
         let textField = UITextField()
         textField.backgroundColor = .specialBrown
@@ -35,6 +38,7 @@ class NewWorkoutViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }
+    private var dateLabel = UILabel(text: "Date and repeat")
     
     private var datePicker: UIDatePicker {
         let datePicker = UIDatePicker()
@@ -53,20 +57,21 @@ class NewWorkoutViewController: UIViewController {
         return mySwitch
     }
     
-    private var mySlider: UISlider {
-        let slider = UISlider()
-       slider.minimumValue = 0
-        slider.maximumValue = 10
-        slider.maximumTrackTintColor = .specialLightBrown
-        slider.minimumTrackTintColor = .specialGreen
-        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
-        
-       slider.translatesAutoresizingMaskIntoConstraints = false
-        
-        return slider
-    }
+    //    private var mySlider: UISlider {
+    //        let slider = UISlider()
+    //       slider.minimumValue = 0
+    //        slider.maximumValue = 10
+    //        slider.maximumTrackTintColor = .specialLightBrown
+    //        slider.minimumTrackTintColor = .specialGreen
+    //        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+    //
+    //       slider.translatesAutoresizingMaskIntoConstraints = false
+    //
+    //        return slider
+    //    }
     
-    private var nameLabel = UILabel(text: "Name")
+    private let dateView = DateAndRepeatView()
+    private let repsOrTimerView = RepsOrTimerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +79,6 @@ class NewWorkoutViewController: UIViewController {
         setupViews()
         setConstraints()
         datePicker.subviews[0].subviews[0].subviews[0].alpha = 0 // делаю прозрачным рамку пикера
-        
         
     }
     
@@ -84,9 +88,13 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(newWorkoutLabel)
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
-        view.addSubview(datePicker)
-        view.addSubview(mySwitch)
-        view.addSubview(mySlider)
+        view.addSubview(dateView)
+        view.addSubview(dateLabel)
+        //        view.addSubview(datePicker)
+        //        view.addSubview(mySwitch)
+        //        view.addSubview(mySlider)
+        view.addSubview(repsLabel)
+        view.addSubview(repsOrTimerView)
         
     }
     @objc private func closeButtonTapped() {
@@ -95,14 +103,13 @@ class NewWorkoutViewController: UIViewController {
     @objc private func comutator() {
         print("1")
     }
-    @objc private func sliderChanged() {
-        print(mySlider.value)
-    }
+    //    @objc private func sliderChanged() {
+    //        print(mySlider.value)
+    //    }
     
 }
 
 // MARK: - Set Constraint
-
 
 extension NewWorkoutViewController {
     
@@ -126,15 +133,34 @@ extension NewWorkoutViewController {
             nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             nameTextField.heightAnchor.constraint(equalToConstant: 38),
             
-            datePicker.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
-            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
-            mySwitch.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
-            mySwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            dateLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
+            dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            mySlider.topAnchor.constraint(equalTo: mySwitch.bottomAnchor, constant: 20),
-            mySlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            mySlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            dateView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 3),
+            dateView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            dateView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            dateView.heightAnchor.constraint(equalToConstant: 110),
+            
+            repsLabel.topAnchor.constraint(equalTo: dateView.bottomAnchor, constant: 20),
+            repsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            repsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            repsOrTimerView.topAnchor.constraint(equalTo: repsLabel.bottomAnchor, constant: 5),
+            repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            repsOrTimerView.heightAnchor.constraint(equalToConstant: 330)
+            //
+            //            datePicker.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
+            //            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            //
+            //            mySwitch.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
+            //            mySwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            //
+            //            mySlider.topAnchor.constraint(equalTo: mySwitch.bottomAnchor, constant: 20),
+            //            mySlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            //            mySlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
 }

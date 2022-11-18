@@ -9,14 +9,11 @@ import UIKit
 
 class WeatherView: UIView {
     
-   
-    
     private var sunImageView: UIImageView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "sun")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-       
-       
+        
         return imageView
     }
     
@@ -62,10 +59,11 @@ class WeatherView: UIView {
         addSubview(sunImageView)// добавляю солнце на экран weatherView
         addSubview(weatherLabel)
         addSubview(weatherTextLabel)
-        
     }
-    
 }
+
+// MARK: - Set Constraint
+
 extension WeatherView {
     
     private func setConstraint() {

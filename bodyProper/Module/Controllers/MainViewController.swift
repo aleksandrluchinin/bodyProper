@@ -95,9 +95,7 @@ class MainViewController: UIViewController {
         setupViews() //1)вызываю метод при загрузке экрана
         setConstraints() // 2)вызываю метод создания констрэйнтов
         setDelegates()// метод передачи данных
-        
     }
-    
     private func setupViews(){ //настройки view
         view.backgroundColor = .specialBackground // создаю цвет основной родительной wiew
         view.addSubview(calendarView)// размещаю на экран calendar (вначале календарь, потом иконку)
@@ -111,7 +109,7 @@ class MainViewController: UIViewController {
         
     }
     private func setDelegates() {
-    tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
     }
     
@@ -136,11 +134,8 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: idTableViewCell, for: indexPath) as? WorkoutTableViewCell else {
             return UITableViewCell()
         }
-        
         return cell
     }
-    
-    
 }
 //MARK - UITableViewDelegate
 
@@ -195,7 +190,6 @@ extension MainViewController { // расширяю класс методами
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-            
         ])
     }
 }
