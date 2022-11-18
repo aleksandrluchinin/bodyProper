@@ -12,13 +12,13 @@ class NewWorkoutViewController: UIViewController {
     
     private var newWorkoutLabel = UILabel(textLabel: "NEW WORKOUT")
     
-    private var closeButton: UIButton {
-        let botton = UIButton(type: .system)
-        botton.setBackgroundImage(UIImage(named: "closeButton"), for: .normal)//изображение на всю кнопку
-        botton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        botton.translatesAutoresizingMaskIntoConstraints = false
-        return botton
-    }
+    private var closeButton = CloseButton(type: .system)
+//        let botton = UIButton(type: .system)
+//        botton.setBackgroundImage(UIImage(named: "closeButton"), for: .normal)//изображение на всю кнопку
+//        botton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+//        botton.translatesAutoresizingMaskIntoConstraints = false
+//        return botton
+//    }
     private var nameLabel = UILabel(text: "Name")
     private var repsLabel = UILabel(text: "Reps or timer")
     
@@ -40,22 +40,22 @@ class NewWorkoutViewController: UIViewController {
     }
     private var dateLabel = UILabel(text: "Date and repeat")
     
-    private var datePicker: UIDatePicker {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.tintColor = .specialGreen
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        return datePicker
-    }
-    private var mySwitch: UISwitch {
-        let mySwitch = UISwitch()
-        mySwitch.isOn = true
-        mySwitch.onTintColor = .specialGreen
-        mySwitch.addTarget(self, action: #selector(comutator), for: .valueChanged)
-        mySwitch.translatesAutoresizingMaskIntoConstraints = false
-        return mySwitch
-    }
+//    private var datePicker: UIDatePicker {
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .date
+//        datePicker.tintColor = .specialGreen
+//        datePicker.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        return datePicker
+//    }
+//    private var mySwitch: UISwitch {
+//        let mySwitch = UISwitch()
+//        mySwitch.isOn = true
+//        mySwitch.onTintColor = .specialGreen
+//        mySwitch.addTarget(self, action: #selector(comutator), for: .valueChanged)
+//        mySwitch.translatesAutoresizingMaskIntoConstraints = false
+//        return mySwitch
+//    }
     
     //    private var mySlider: UISlider {
     //        let slider = UISlider()
@@ -73,12 +73,14 @@ class NewWorkoutViewController: UIViewController {
     private let dateView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
     
+    private var saveButton = GreenButton(text: "SAVE")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setConstraints()
-        datePicker.subviews[0].subviews[0].subviews[0].alpha = 0 // делаю прозрачным рамку пикера
+//        datePicker.subviews[0].subviews[0].subviews[0].alpha = 0 // делаю прозрачным рамку пикера
         
     }
     
@@ -95,10 +97,15 @@ class NewWorkoutViewController: UIViewController {
         //        view.addSubview(mySlider)
         view.addSubview(repsLabel)
         view.addSubview(repsOrTimerView)
+        view.addSubview(saveButton)
+        closeButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         
     }
     @objc private func closeButtonTapped() {
         dismiss(animated: true) //закрытие экрана при нажатии на кнопку
+    }
+    @objc private func saveButtonTapped() {
+        
     }
     @objc private func comutator() {
         print("1")
@@ -150,7 +157,14 @@ extension NewWorkoutViewController {
             repsOrTimerView.topAnchor.constraint(equalTo: repsLabel.bottomAnchor, constant: 5),
             repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            repsOrTimerView.heightAnchor.constraint(equalToConstant: 330)
+            repsOrTimerView.heightAnchor.constraint(equalToConstant: 330),
+            
+            saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 20),
+            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 55)
+            
+            
             //
             //            datePicker.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
             //            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
