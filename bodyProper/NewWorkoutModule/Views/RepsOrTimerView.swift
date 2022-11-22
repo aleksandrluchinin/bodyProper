@@ -95,11 +95,26 @@ class RepsOrTimerView: UIView {
         slider.translatesAutoresizingMaskIntoConstraints = false
         return slider
     }
+    
+    public var isTimer = false
+    
+    public var isActive: Bool = true  {
+        didSet {
+            if self.isActive {
+                secondLabel.alpha = 1
+            } else {
+                secondLabel.alpha = 0.5
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
         setConstraint()
+        
+        
         
     }
     required init?(coder: NSCoder) {
@@ -125,13 +140,14 @@ class RepsOrTimerView: UIView {
     }
     
     @objc private func setSliderChanged() {
-        print(setsSlider.value)
+        fourLabel.text = "\(Int(setsSlider.value))"
     }
     @objc private func repsSliderChanged() {
-        print(repsSlider.value)
+        tenLabel.text = "\(Int(repsSlider.value))"
     }
     @objc private func timerSliderChanged() {
-        print(timerSlider.value)
+        let intValueSlider = Int(timerSlider.value)
+        secondLabel.text = isTimer ? intValueSlider.getTimeFromSeconds() : "\(intValueSlider)"
     }
     
 }

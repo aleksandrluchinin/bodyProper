@@ -106,7 +106,7 @@ extension StatisticViewController: UITableViewDataSource {
 extension StatisticViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        55
     }
 }
 // MARK: - Set Constraint

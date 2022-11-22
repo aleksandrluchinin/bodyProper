@@ -81,9 +81,9 @@ class MainViewController: UIViewController {
         
     }
     private let idTableViewCell = "idTableViewCell" //индентификтор ячейки
-    // Создаю эксземпляр класс 
-    private let calendarView = CalendarView()
-    private let weatherView = WeatherView()
+    // Создаю эксземпляр класс
+//    private let calendarView = CalendarView()
+//    private let weatherView = WeatherView()
     
     override func viewWillLayoutSubviews() {
         userFotoImageView.layer.cornerRadius = userFotoImageView.frame.width / 2
@@ -98,11 +98,11 @@ class MainViewController: UIViewController {
     }
     private func setupViews(){ //настройки view
         view.backgroundColor = .specialBackground // создаю цвет основной родительной wiew
-        view.addSubview(calendarView)// размещаю на экран calendar (вначале календарь, потом иконку)
+//        view.addSubview(calendarView)// размещаю на экран calendar (вначале календарь, потом иконку)
         view.addSubview(userFotoImageView)// размещаю иконку пользователя на основной экран (wiew)
         view.addSubview(userNameLabel)//размещаю на экран имя пользователя
         view.addSubview(addWorkoutButton)// размещаю кнопку на основной view
-        view.addSubview(weatherView)// размещаю на экран weatherView
+//        view.addSubview(weatherView)// размещаю на экран weatherView
         view.addSubview(workoutTodaylabel)// размещаю лейбл текст
         view.addSubview(tableView)//размещаю таблицу
         tableView.register(WorkoutTableViewCell.self, forCellReuseIdentifier: idTableViewCell)//регистрирую ячейку
@@ -161,27 +161,27 @@ extension MainViewController { // расширяю класс методами
             userFotoImageView.heightAnchor.constraint(equalToConstant: 100),
             userFotoImageView.widthAnchor.constraint(equalToConstant: 100),
             
-            // устанавливаю констрэйнты для календаря
-            calendarView.topAnchor.constraint(equalTo: userFotoImageView.centerYAnchor),// верхня граница
-            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            calendarView.heightAnchor.constraint(equalToConstant: 70),//ширина
+//            // устанавливаю констрэйнты для календаря
+//            calendarView.topAnchor.constraint(equalTo: userFotoImageView.centerYAnchor),// верхня граница
+//            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+//            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+//            calendarView.heightAnchor.constraint(equalToConstant: 70),//ширина
             // констрэйнты для label
-            userNameLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: -10), // делаю отступ от верхней границы календаря
-            userNameLabel.leadingAnchor.constraint(equalTo: userFotoImageView.trailingAnchor, constant: 5),// отступ от иконки пользователя справа
-            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
+//            userNameLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: -10), // делаю отступ от верхней границы календаря
+//            userNameLabel.leadingAnchor.constraint(equalTo: userFotoImageView.trailingAnchor, constant: 5),// отступ от иконки пользователя справа
+//            userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 10),
             
             // устанавливаю констрэйнты для кнопки
-            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
-            addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            addWorkoutButton.widthAnchor.constraint(equalToConstant: 80),
-            addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
+//            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+//            addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+//            addWorkoutButton.widthAnchor.constraint(equalToConstant: 80),
+//            addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
             
             //устанавливаю констрэйнты для окна погоды
-            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
-            weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
-            weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            weatherView.heightAnchor.constraint(equalToConstant: 100),
+//            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 5),
+//            weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
+//            weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+//            weatherView.heightAnchor.constraint(equalToConstant: 100),
             
             workoutTodaylabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
             workoutTodaylabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
