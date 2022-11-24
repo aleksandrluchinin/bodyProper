@@ -98,7 +98,7 @@ class NewWorkoutViewController: UIViewController {
         view.addSubview(repsLabel)
         view.addSubview(repsOrTimerView)
         view.addSubview(saveButton)
-        closeButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
     }
     @objc private func closeButtonTapped() {
@@ -113,6 +113,10 @@ class NewWorkoutViewController: UIViewController {
     //    @objc private func sliderChanged() {
     //        print(mySlider.value)
     //    }
+    public func getNameTextFieldText() ->String {
+        guard let text = nameTextField.text else { return "" }
+        return text
+    }
     
 }
 

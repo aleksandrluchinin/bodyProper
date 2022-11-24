@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41691399292D74D200D9B7A2 /* Int + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41691398292D74D200D9B7A2 /* Int + extensions.swift */; };
+		4169139D292D7F4800D9B7A2 /* WorkoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4169139C292D7F4800D9B7A2 /* WorkoutModels.swift */; };
 		418894B6291AF395001536A3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418894B5291AF395001536A3 /* CalendarView.swift */; };
 		418894B9291B3174001536A3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418894B8291B3174001536A3 /* WeatherView.swift */; };
 		41940262291C7A0C006FEAB8 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41940260291C7A0B006FEAB8 /* Roboto-Bold.ttf */; };
@@ -21,6 +22,8 @@
 		41AD37282928324F00945162 /* GreenSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41AD37272928324F00945162 /* GreenSlider.swift */; };
 		41B3CB2D2922E1FF0064DB58 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3CB2C2922E1FF0064DB58 /* StatisticViewController.swift */; };
 		41B3CB302922EF920064DB58 /* StatisticsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B3CB2F2922EF920064DB58 /* StatisticsTableViewCell.swift */; };
+		41B53292292EF09B0056E94C /* StartWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B53291292EF09B0056E94C /* StartWorkout.swift */; };
+		41B53296292EF61D0056E94C /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B53295292EF61D0056E94C /* StartWorkoutView.swift */; };
 		41D7BB942925D8B400F73E85 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D7BB932925D8B400F73E85 /* RepsOrTimerView.swift */; };
 		41D7BB972925D8F900F73E85 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D7BB962925D8F900F73E85 /* DateAndRepeatView.swift */; };
 		41E42CC729243646006DBCC7 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E42CC629243646006DBCC7 /* UILabel + Extensions.swift */; };
@@ -38,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		41691398292D74D200D9B7A2 /* Int + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + extensions.swift"; sourceTree = "<group>"; };
+		4169139C292D7F4800D9B7A2 /* WorkoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModels.swift; sourceTree = "<group>"; };
 		418894B5291AF395001536A3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		418894B8291B3174001536A3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		41940260291C7A0B006FEAB8 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		41AD37272928324F00945162 /* GreenSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenSlider.swift; sourceTree = "<group>"; };
 		41B3CB2C2922E1FF0064DB58 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		41B3CB2F2922EF920064DB58 /* StatisticsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTableViewCell.swift; sourceTree = "<group>"; };
+		41B53291292EF09B0056E94C /* StartWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkout.swift; sourceTree = "<group>"; };
+		41B53295292EF61D0056E94C /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		41D7BB932925D8B400F73E85 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		41D7BB962925D8F900F73E85 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		41E42CC629243646006DBCC7 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4169139B292D7F0C00D9B7A2 /* WorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				4169139C292D7F4800D9B7A2 /* WorkoutModels.swift */,
+			);
+			path = WorkoutModule;
+			sourceTree = "<group>";
+		};
 		4194025F291C763B006FEAB8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +152,25 @@
 			path = StatisticModule;
 			sourceTree = "<group>";
 		};
+		41B53294292EF5BB0056E94C /* StartWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				41B53291292EF09B0056E94C /* StartWorkout.swift */,
+				41B53295292EF61D0056E94C /* StartWorkoutView.swift */,
+			);
+			path = StartWorkout;
+			sourceTree = "<group>";
+		};
+		41B53298292EF7140056E94C /* NewWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				41E42CD3292480E1006DBCC7 /* NewWorkoutViewController.swift */,
+				41D7BB932925D8B400F73E85 /* RepsOrTimerView.swift */,
+				41D7BB962925D8F900F73E85 /* DateAndRepeatView.swift */,
+			);
+			path = NewWorkout;
+			sourceTree = "<group>";
+		};
 		41E42CCA29246508006DBCC7 /* NavigationModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +191,8 @@
 		41E42CD129248075006DBCC7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				41E42CD3292480E1006DBCC7 /* NewWorkoutViewController.swift */,
+				41B53298292EF7140056E94C /* NewWorkout */,
+				41B53294292EF5BB0056E94C /* StartWorkout */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,8 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				41E42CD129248075006DBCC7 /* Controller */,
-				41D7BB962925D8F900F73E85 /* DateAndRepeatView.swift */,
-				41D7BB932925D8B400F73E85 /* RepsOrTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +256,7 @@
 		41EF67FA2919E0FF00C0DE64 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				4169139B292D7F0C00D9B7A2 /* WorkoutModule */,
 				41EF67FC2919E15B00C0DE64 /* Views */,
 				41EF67FD2919E17600C0DE64 /* Controllers */,
 				41940265291C7C29006FEAB8 /* Extensions */,
@@ -334,6 +367,9 @@
 				418894B6291AF395001536A3 /* CalendarView.swift in Sources */,
 				41AD37282928324F00945162 /* GreenSlider.swift in Sources */,
 				41EB52BC291F001C00A0C8D3 /* UIStackView + Extension.swift in Sources */,
+				41B53296292EF61D0056E94C /* StartWorkoutView.swift in Sources */,
+				41B53292292EF09B0056E94C /* StartWorkout.swift in Sources */,
+				4169139D292D7F4800D9B7A2 /* WorkoutModels.swift in Sources */,
 				41AD3722292825F300945162 /* CloseButton.swift in Sources */,
 				4194026E291C80F3006FEAB8 /* UIColor + Extensions.swift in Sources */,
 				41940272291CAE02006FEAB8 /* CalendarCollectionViewCell.swift in Sources */,
